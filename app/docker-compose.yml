@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  script:
+    build: ./
+#    command: /app/get_data.py
+    container_name: script
+    depends_on:
+      - db
+    networks:
+      - net
+  db:
+    image: postgres:latest
+    container_name: postgresql
+    restart: always
+    volumes:
+      - ./ .database/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "25432:25432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwerty
+#      POSTGRES_DB: countries_db
+    networks:
+      - net
+
+networks:
+ net:
+  driver: bridge
