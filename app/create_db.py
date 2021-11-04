@@ -20,5 +20,5 @@ def create_db(obj_list):
         except Exception as ex:
             print(f"[INFO] Data is not valid. {ex}")
         else:
-            print(f"[INFO] Table populated with data successfully.")
+            print(f"[INFO] The data has been successfully loaded into the database.")
             print_data()  # запускаем последний скрипт получения и вывода конечных данных
