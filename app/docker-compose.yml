@@ -16,11 +16,11 @@ services:
     volumes:
       - ./ .database/postgres/data:/var/lib/postgresql/data
     ports:
-      - "25432:25432"
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: qwerty
-#      POSTGRES_DB: countries_db
+      POSTGRES_DB: countries_db
     networks:
       - net
 
